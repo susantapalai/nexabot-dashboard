@@ -1,23 +1,35 @@
-import axios from 'axios';
+const BASE_URL = process.env.REACT_APP_API_URL 
+  || 'http://localhost:8080/api';
 
-const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
-
-const api = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    'Content-Type': 'application/json'
-  }
+const getHeaders = () => ({
+  'Content-Type': 'application/json',
+  'Authorization': `Bearer ${localStorage.getItem('token')}`
 });
 
 export const businessAPI = {
-  getAll: () => api.get('/business'),
-  getById: (id) => api.get(`/business/${id}`),
-  create: (data) => api.post('/business', data),
-  update: (id, data) => api.put(`/business/${id}`, data)
+  getAll: () => fetch(`${BASE_URL}/business`, 
+    { headers: getHeaders() }).then(r => r.json()),
+
+  getById: (id) => fetch(`${BASE_URL}/business/${id}`, 
+    { headers: getHeaders() }).then(r => r.json()),
+
+  update: (id, data) => fetch(`${BASE_URL}/business/${id}`, {
+    method: 'PUT',
+    headers: getHeaders(),
+    body: JSON.stringify(data)
+  }).then(r => r.json())
 };
 
-export const chatAPI = {
-  getHistory: (businessId) => api.get(`/chat/history/${businessId}`)
-};
+export const authAPI = {
+  login: (data) => fetch(`${BASE_URL}/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(r => r.json()),
 
-export default api;
+  register: (data) => fetch(`${BASE_URL}/auth/register`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(r => r.json())
+};

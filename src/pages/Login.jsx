@@ -6,14 +6,38 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = () => {
-    // Hardcoded for now — Day 6 we add JWT
-    if (email && password) {
-      localStorage.setItem('businessId', '1');
-      localStorage.setItem('logged', 'true');
+  // const handleLogin = () => {
+  //   // Hardcoded for now — Day 6 we add JWT
+  //   if (email && password) {
+  //     localStorage.setItem('businessId', '1');
+  //     localStorage.setItem('logged', 'true');
+  //     navigate('/dashboard');
+  //   }
+  // };
+  const handleLogin = async () => {
+  try {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/auth/login`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      }
+    );
+    const data = await response.json();
+
+    if (data.success) {
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('businessId', data.businessId);
+      localStorage.setItem('name', data.name);
       navigate('/dashboard');
+    } else {
+      alert(data.error || 'Login failed');
     }
-  };
+  } catch (err) {
+    alert('Server error. Try again.');
+  }
+};
 
   return (
     <div style={{

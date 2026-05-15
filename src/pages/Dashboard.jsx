@@ -6,11 +6,18 @@ export default function Dashboard() {
   const [business, setBusiness] = useState(null);
 
   useEffect(() => {
-    const id = localStorage.getItem('businessId') || 1;
-    businessAPI.getById(id)
-      .then(res => setBusiness(res.data))
-      .catch(err => console.error(err));
-  }, []);
+  const id = localStorage.getItem('businessId') || 1;
+  const token = localStorage.getItem('token');
+
+  fetch(`${process.env.REACT_APP_API_URL}/business/${id}`, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  })
+    .then(res => res.json())
+    .then(data => setBusiness(data))
+    .catch(err => console.error(err));
+}, []);
 
   const stats = [
     { label: 'Total Chats Today', value: '24', change: '↑ 12%', color: '#6c63ff' },

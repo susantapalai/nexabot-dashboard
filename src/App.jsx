@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard';
 import BusinessEditor from './pages/BusinessEditor';
 import ChatHistory from './pages/ChatHistory';
 
+
 function App() {
   return (
     <BrowserRouter>
