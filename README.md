@@ -1,70 +1,246 @@
-# Getting Started with Create React App
+# 🚀 NexaBot Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
 
-## Available Scripts
+![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge\&logo=react)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge\&logo=javascript)
+![Axios](https://img.shields.io/badge/Axios-API-purple?style=for-the-badge\&logo=axios)
+![React Router](https://img.shields.io/badge/React_Router-v7-red?style=for-the-badge\&logo=reactrouter)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-In the project directory, you can run:
+### ⚡ Modern Admin Dashboard for NexaBot Management
 
-### `npm start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📌 Overview
 
-### `npm test`
+NexaBot Dashboard is a modern React-based admin panel designed to manage chatbot operations, monitor business data, and track chat history efficiently.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project follows a clean folder structure with reusable components, API service handling, and dedicated pages for scalability and maintainability.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# ✨ Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+✅ Responsive Dashboard UI
+✅ Authentication/Login Page
+✅ Business Management Editor
+✅ Chat History Tracking
+✅ Reusable React Components
+✅ API Service Layer using Axios
+✅ React Router Navigation
+✅ Clean Project Architecture
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+# 🛠️ Tech Stack
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Technology       | Usage              |
+| ---------------- | ------------------ |
+| React 19         | Frontend Framework |
+| React Router DOM | Routing            |
+| Axios            | API Requests       |
+| Lucide React     | Icons              |
+| CSS              | Styling            |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# 📂 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+nexabot-dashboard-main/
+│
+├── public/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+│
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Sidebar.jsx
+│   │   └── StatCard.jsx
+│   │
+│   ├── pages/
+│   │   ├── BusinessEditor.jsx
+│   │   ├── ChatHistory.jsx
+│   │   ├── Dashboard.jsx
+│   │   └── Login.jsx
+│   │
+│   ├── services/
+│   │   └── api.js
+│   │
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── index.js
+│
+├── .env
+├── .env.production
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# ⚙️ Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 1️⃣ Clone Repository
 
-### Code Splitting
+```bash
+git clone <your-repository-url>
+cd nexabot-dashboard-main
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 2️⃣ Install Dependencies
 
-### Analyzing the Bundle Size
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 3️⃣ Start Development Server
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Application will run on:
 
-### Advanced Configuration
+```bash
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+# 📦 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| Command       | Description             |
+| ------------- | ----------------------- |
+| npm start     | Run development server  |
+| npm run build | Create production build |
+| npm test      | Run test suite          |
+| npm run eject | Eject CRA configuration |
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 🧩 Core Modules
+
+## 📊 Dashboard
+
+Displays analytics, statistics, and overview cards.
+
+## 💬 Chat History
+
+Manage and review chatbot conversations.
+
+## 🏢 Business Editor
+
+Edit and configure business-related information.
+
+## 🔐 Authentication
+
+Handles user login and access control.
+
+---
+
+# 🔗 API Layer
+
+The project uses a dedicated service layer:
+
+```bash
+src/services/api.js
+```
+
+This helps keep API logic separate from UI components.
+
+---
+
+# 🎨 UI Components
+
+Reusable UI components are located inside:
+
+```bash
+src/components/
+```
+
+### Included Components
+
+* Navbar
+* Sidebar
+* StatCard
+
+---
+
+# 🌍 Environment Variables
+
+Example:
+
+```env
+REACT_APP_API_URL=your_api_url
+```
+
+Production variables can be configured inside:
+
+```bash
+.env.production
+```
+
+---
+
+# 🚀 Build for Production
+
+```bash
+npm run build
+```
+
+Production-ready files will be generated inside:
+
+```bash
+/build
+```
+
+---
+
+# 📈 Future Improvements
+
+* Add JWT Authentication
+* Add Role-Based Access
+* Improve Analytics Charts
+* Add Dark Mode
+* Add Real-Time Notifications
+* Docker Support
+* Unit & Integration Testing
+
+---
+
+# 🤝 Contributing
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Push to your branch
+5. Open a Pull Request
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+<div align="center">
+
+### ⭐ If you like this project, give it a star ⭐
+
+Made with ❤️ using React
+
+</div>
